@@ -19,9 +19,8 @@ class StarWarsViewModel : ViewModel() {
     private fun loadStarWars() {
 
         val starWarsApiResult = StarWarsRepository.getListPeople(1)
-        starWarsApiResult?.let{
-        //    people = it.results
+        starWarsApiResult?.results.let {
+            people.postValue(it)
         }
-
     }
 }

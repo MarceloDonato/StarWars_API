@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         loader_starwars.visibility = VISIBLE
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = StarWarsAdapter(people)
 
         loader_starwars.visibility = GONE
