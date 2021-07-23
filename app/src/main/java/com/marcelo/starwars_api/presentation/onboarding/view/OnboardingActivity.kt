@@ -1,13 +1,12 @@
-package com.marcelo.starwars_api.onboarding
+package com.marcelo.starwars_api.presentation.onboarding.view
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.marcelo.starwars_api.R
-import com.marcelo.starwars_api.view.MainActivity
+import com.marcelo.starwars_api.presentation.home.view.HomeActivity
 import kotlinx.android.synthetic.main.activity_onboarding.*
-
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -22,12 +21,10 @@ class OnboardingActivity : AppCompatActivity() {
         button_Onboarding.setOnClickListener {
             startHomeScreen()
         }
-
     }
 
-
-    private fun startHomeScreen(){
-        startActivity(MainActivity.getStartIntent(this))
+    private fun startHomeScreen() {
+        startActivity(HomeActivity.getStartIntent(this))
         finish()
     }
 }

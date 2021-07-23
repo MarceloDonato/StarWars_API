@@ -9,31 +9,30 @@
     app:layout_constraintStart_toStartOf="parent">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_person"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="@dimen/match_constraints"
-        android:layout_marginRight="50dp"
         android:scaleType="fitCenter"
+        android:layout_margin="@dimen/default_margin"
         android:src="@drawable/fundo_onboarding"
-        app:layout_constraintBottom_toTopOf="@+id/peopleName"
+        app:layout_constraintBottom_toTopOf="@+id/person_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/peopleName"
+        android:id="@+id/person_name"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/image_person"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="qualquercoisa" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

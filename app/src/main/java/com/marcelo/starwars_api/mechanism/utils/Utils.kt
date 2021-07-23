@@ -1,4 +1,4 @@
-package com.marcelo.starwars_api.utils
+package com.marcelo.starwars_api.mechanism.utils
 
 import android.os.Build
 import android.text.Html

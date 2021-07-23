@@ -1,4 +1,4 @@
-package com.marcelo.starwars_api.splash
+package com.marcelo.starwars_api.presentation.splash.view
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.core.content.ContextCompat
 import com.marcelo.starwars_api.R
-import com.marcelo.starwars_api.onboarding.OnboardingActivity
+import com.marcelo.starwars_api.presentation.onboarding.view.OnboardingActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
