@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity">
+    tools:context=".presentation.home.view.HomeActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvStarWars"
@@ -16,13 +16,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <include
         android:id="@+id/loader_starwars"
         layout="@layout/loader"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="@dimen/match_constraints"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
