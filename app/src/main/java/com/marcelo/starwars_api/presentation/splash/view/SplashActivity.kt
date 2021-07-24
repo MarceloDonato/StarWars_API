@@ -15,7 +15,10 @@ class SplashActivity : AppCompatActivity() {
         R.drawable.starwars_image1,
         R.drawable.starwars_image2,
         R.drawable.starwars_image4,
-        R.drawable.starwars_image5
+        R.drawable.starwars_image5,
+        R.drawable.starwars_image6,
+        R.drawable.starwars_image7,
+        R.drawable.starwars_image8
     )
 
 
