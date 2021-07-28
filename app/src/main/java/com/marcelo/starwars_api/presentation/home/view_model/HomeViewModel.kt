@@ -1,13 +1,13 @@
 package com.marcelo.starwars_api.presentation.home.view_model
 
 import com.marcelo.starwars_api.domain.FilmsResults
-import com.marcelo.starwars_api.domain.Results
+import com.marcelo.starwars_api.domain.PeopleResults
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.marcelo.starwars_api.api.model.StarWarsRepository
 
 class HomeViewModel : ViewModel() {
-    var people = MutableLiveData<List<Results?>>()
+    var people = MutableLiveData<List<PeopleResults?>>()
     var films = MutableLiveData<List<FilmsResults>>()
 
     init {

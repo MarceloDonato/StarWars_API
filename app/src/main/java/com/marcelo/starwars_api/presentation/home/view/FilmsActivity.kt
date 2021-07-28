@@ -4,12 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View.GONE
-import android.view.View.VISIBLE
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.marcelo.starwars_api.R
 import com.marcelo.starwars_api.domain.FilmsResults
+import com.marcelo.starwars_api.presentation.details.view.FilmDetailsActivity
 import com.marcelo.starwars_api.presentation.home.adapter.StarWarsRecyclerAdapter
 import com.marcelo.starwars_api.presentation.home.view_model.HomeViewModel
 import com.marcelo.starwars_api.presentation.home.view_model.StarWarsViewModelFactory

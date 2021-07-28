@@ -1,0 +1,39 @@
+package com.marcelo.starwars_api.presentation.details.adapter
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.lucasdonato.pokemon_api.presentation.base.adapter.BaseRecyclerAdapter
+import com.marcelo.starwars_api.R
+import com.marcelo.starwars_api.mechanism.utils.Utils
+import kotlinx.android.synthetic.main.people_item_view.view.*
+
+class CharactersRecyclerAdapter :
+    BaseRecyclerAdapter<String?, CharactersRecyclerAdapter.ViewHolder>() {
+
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+        mData[position]?.let { viewHolder.bind(it, position) }
+    }
+
+    override fun validateDate() = false
+
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) = ViewHolder(
+        LayoutInflater.from(viewGroup.context).inflate(
+            (R.layout.people_item_view), viewGroup,
+            false
+        )
+    )
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        fun bind(people: String, position: Int) {
+
+            itemView.apply {
+                Glide.with(itemView.context)
+                    .load(people.let { image -> Utils.getImagePeople(image) }).into(characters_image)
+            }
+        }
+    }
+}

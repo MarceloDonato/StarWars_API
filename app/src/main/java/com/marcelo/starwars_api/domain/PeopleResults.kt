@@ -3,7 +3,7 @@ package com.marcelo.starwars_api.domain
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class Results (
+data class PeopleResults (
 
 	@SerializedName("name") val name : String?,
 	@SerializedName("height") val height : Int?,
