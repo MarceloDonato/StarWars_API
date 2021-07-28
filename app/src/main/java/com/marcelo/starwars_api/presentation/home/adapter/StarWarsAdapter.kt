@@ -1,6 +1,6 @@
 package com.marcelo.starwars_api.presentation.home.adapter
 
-import Results
+import com.marcelo.starwars_api.domain.Results
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

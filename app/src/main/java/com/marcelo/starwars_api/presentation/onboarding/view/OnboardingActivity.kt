@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.marcelo.starwars_api.R
+import com.marcelo.starwars_api.presentation.home.view.FilmsAcitivity
 import com.marcelo.starwars_api.presentation.home.view.HomeActivity
 import kotlinx.android.synthetic.main.activity_onboarding.*
 
@@ -24,7 +25,7 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun startHomeScreen() {
-        startActivity(HomeActivity.getStartIntent(this))
+        startActivity(FilmsAcitivity.getStartIntent(this))
         finish()
     }
 }

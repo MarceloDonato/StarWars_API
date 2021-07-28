@@ -1,3 +1,5 @@
+package com.marcelo.starwars_api.domain
+
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 

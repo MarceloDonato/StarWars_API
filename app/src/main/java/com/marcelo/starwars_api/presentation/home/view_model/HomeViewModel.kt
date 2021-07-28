@@ -1,17 +1,19 @@
 package com.marcelo.starwars_api.presentation.home.view_model
 
-import Results
+import com.marcelo.starwars_api.domain.FilmsResults
+import com.marcelo.starwars_api.domain.Results
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.marcelo.starwars_api.api.model.StarWarsRepository
 
 class HomeViewModel : ViewModel() {
     var people = MutableLiveData<List<Results?>>()
-    var listAdd = MutableLiveData<List<Results?>>()
+    var films = MutableLiveData<List<FilmsResults>>()
 
     init {
         Thread(Runnable {
-            startStarWars()
+            getSatrWarsFilms()
+
         }).start()
     }
 
@@ -22,10 +24,10 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    fun starWarsPage(page: Int) {
-        val starWarsApiResult = StarWarsRepository.getListPeople(page)
-        starWarsApiResult?.results?.let {
-            listAdd.postValue(it)
+    fun getSatrWarsFilms() {
+        val filmsApiResults = StarWarsRepository.getListFilms()
+        filmsApiResults?.results.let {
+            films.postValue(it)
         }
     }
 }

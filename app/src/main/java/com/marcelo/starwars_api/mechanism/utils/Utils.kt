@@ -6,7 +6,7 @@ import android.text.Spanned
 
 object Utils {
 
-    fun getImage(url: String): String {
+    fun getImageFilms(url: String): String {
 
         return "https://starwars-visualguide.com/assets/img/" + splitString(url) + ".jpg"
     }
