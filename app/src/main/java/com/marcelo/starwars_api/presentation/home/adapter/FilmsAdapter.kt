@@ -40,8 +40,7 @@ class FilmsAdapter(
 
             item?.let {
                 Glide.with(itemView.context)
-                    .load(it.url?.let { image -> Utils.getImageFilms(image) })
-                    .into(image_film)
+                    .load(it.url?.let { image -> Utils.getImageFilms(image) }).into(image_film)
                 film_name.text = it.title
                 container.setOnClickListener {
                     onItemClickListener?.invoke(item)

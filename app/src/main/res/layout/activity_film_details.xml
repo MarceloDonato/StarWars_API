@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/film_details_name"
+    <include
+        android:id="@+id/include_image"
+        layout="@layout/include_films_details_image"
         android:layout_width="@dimen/match_constraints"
-        android:layout_height="50dp"
-        android:background="@drawable/custom_background_text_name"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:layout_height="@dimen/match_constraints"
+        app:layout_constraintBottom_toTopOf="@+id/include_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/film_details_director"
+    <include
+        android:id="@+id/include_description"
+        layout="@layout/include_films_details_description"
         android:layout_width="@dimen/match_constraints"
-        android:layout_height="50dp"
-        android:background="@drawable/custom_background_text_name"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:layout_height="@dimen/match_constraints"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/film_details_name" />
+        app:layout_constraintTop_toBottomOf="@+id/include_image"
+        app:layout_goneMarginTop="@dimen/default_margin" />
+
+    <include
+        android:id="@+id/loader"
+        layout="@layout/loader"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

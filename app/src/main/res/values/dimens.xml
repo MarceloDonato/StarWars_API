@@ -28,15 +28,9 @@
     <!--Loader-->
     <dimen name="loader">200dp</dimen>
 
-    <!--Card Recycler Apod-->
-    <dimen name="card_apod">200dp</dimen>
+    <dimen name="height_text_details">50dp</dimen>
 
-    <!--Nasa logo -->
-    <dimen name="logo_nasa_home">120dp</dimen>
-
-    <!--Card Recycler Apod-->
+    <!--Card Recycler-->
     <dimen name="card_detail_image">300dp</dimen>
-
-    <dimen name="pokedex_background">400dp</dimen>
 
 </resources>

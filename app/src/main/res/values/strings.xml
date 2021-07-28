@@ -1,8 +1,11 @@
 <resources>
 
-
     <string name="app_name">StarWars_API</string>
     <string name="welcome_message">Aplicativo construído utilizando a API do Starwars com a intenção de aprender a utilizar o consumo de API, venha conferir como o projeto ficou!</string>
-    <string name="name_director">Diretor: %s</string>
+
+    <string name="name_director">Director: %s</string>
+    <string name="opening_craw">Opening Crawl: \n\n%s</string>
+    <string name="name_producer">Producer: %s</string>
+    <string name="date_created">Date Created: %s</string>
 
 </resources>

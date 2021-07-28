@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/image_details_film"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="@dimen/card_detail_image"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/film_director_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/fundo_onboarding" />
+
+    <TextView
+        android:id="@+id/film_details_name"
+        style="@style/text_bold"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:gravity="start"
+        app:layout_constraintStart_toEndOf="@+id/image_details_film"
+        app:layout_constraintTop_toTopOf="@+id/image_details_film"
+        tools:text="The new hope" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/film_director_name"
+        style="@style/text_default"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_details_film"
+        app:layout_constraintTop_toBottomOf="@+id/film_details_name"
+        tools:text="Director: George Lucas" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/film_producer_name"
+        style="@style/text_default"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_details_film"
+        app:layout_constraintTop_toBottomOf="@+id/film_director_name"
+        tools:text="Producer(s): Lucas George" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
