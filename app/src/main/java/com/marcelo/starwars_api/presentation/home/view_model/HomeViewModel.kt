@@ -12,8 +12,7 @@ class HomeViewModel : ViewModel() {
 
     init {
         Thread(Runnable {
-            getSatrWarsFilms()
-
+            getStarWarsFilms()
         }).start()
     }
 
@@ -24,7 +23,7 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    fun getSatrWarsFilms() {
+    private fun getStarWarsFilms() {
         val filmsApiResults = StarWarsRepository.getListFilms()
         filmsApiResults?.results.let {
             films.postValue(it)

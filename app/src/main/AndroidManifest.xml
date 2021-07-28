@@ -11,18 +11,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.home.view.FilmsAcitivity"></activity>
-        <activity android:name=".presentation.onboarding.view.OnboardingActivity" />
+
         <activity
             android:name=".presentation.splash.view.SplashActivity"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.home.view.HomeActivity" />
-    </application>
 
+    <activity
+        android:name=".presentation.home.view.FilmsActivity"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".presentation.onboarding.view.OnboardingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".presentation.home.view.FilmDetailsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+    </application>
 </manifest>

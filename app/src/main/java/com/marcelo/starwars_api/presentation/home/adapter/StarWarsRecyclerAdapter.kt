@@ -1,6 +1,5 @@
 package com.marcelo.starwars_api.presentation.home.adapter
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,15 +9,16 @@ import com.lucasdonato.pokemon_api.presentation.base.adapter.BaseRecyclerAdapter
 import com.marcelo.starwars_api.R
 import com.marcelo.starwars_api.domain.FilmsResults
 import com.marcelo.starwars_api.mechanism.utils.Utils
-import kotlinx.android.synthetic.main.starwars_item.view.*
-
+import kotlinx.android.synthetic.main.item_films.view.*
 
 class StarWarsRecyclerAdapter :
-    BaseRecyclerAdapter<FilmsResults, StarWarsRecyclerAdapter.ViewHolder>() {
+    BaseRecyclerAdapter<FilmsResults?, StarWarsRecyclerAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.bind(mData[position], position)
+        mData[position]?.let { viewHolder.bind(it, position) }
     }
+
+    override fun validateDate() = false
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int) = ViewHolder(
         LayoutInflater.from(viewGroup.context).inflate(
@@ -31,16 +31,18 @@ class StarWarsRecyclerAdapter :
 
         fun bind(films: FilmsResults, position: Int) {
 
-
             itemView.apply {
+
                 Glide.with(itemView.context)
-                    .load(films.url?.let { image -> Utils.getImagePeople(image) })
-                    .into(image_person)
-                person_name.text = films.title
+                    .load(films.url.let { image -> Utils.getImageFilms(image) }).into(image_film)
+
+                film_name.text = films.title
+
+                container.setOnClickListener {
+                    onItemClickListener?.invoke(films)
+                }
+
             }
         }
     }
-
-    override fun validateDate() = false
-
 }

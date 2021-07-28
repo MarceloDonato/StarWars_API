@@ -1,32 +1,29 @@
 package com.marcelo.starwars_api.presentation.home.view
 
-import com.marcelo.starwars_api.domain.FilmsResults
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.marcelo.starwars_api.R
-import com.marcelo.starwars_api.presentation.home.adapter.FilmsAdapter
+import com.marcelo.starwars_api.domain.FilmsResults
 import com.marcelo.starwars_api.presentation.home.adapter.StarWarsRecyclerAdapter
 import com.marcelo.starwars_api.presentation.home.view_model.HomeViewModel
 import com.marcelo.starwars_api.presentation.home.view_model.StarWarsViewModelFactory
-import kotlinx.android.synthetic.main.activity_films_acitivity.*
+import kotlinx.android.synthetic.main.activity_films.*
 
-
-class FilmsAcitivity : AppCompatActivity() {
+class FilmsActivity : AppCompatActivity() {
 
     companion object {
-        fun getStartIntent(context: Context) = Intent(context, FilmsAcitivity::class.java)
+        fun getStartIntent(context: Context) = Intent(context, FilmsActivity::class.java)
     }
 
     private val adapterList: StarWarsRecyclerAdapter by lazy {
         StarWarsRecyclerAdapter()
     }
-
 
     private val viewModel by lazy {
         ViewModelProvider(this, StarWarsViewModelFactory())
@@ -35,30 +32,26 @@ class FilmsAcitivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_films_acitivity)
-
+        setContentView(R.layout.activity_films)
         observable()
-        setupRecyclerView()
-
     }
 
     private fun observable() {
         viewModel.films.observe(this, Observer {
-            adapterList.data = it.toMutableList()
+            setupRecyclerView(it)
         })
     }
 
-
-    private fun setupRecyclerView() {
-
+    private fun setupRecyclerView(films: List<FilmsResults?>) {
+        adapterList.data = films.toMutableList()
         rvFilms.apply {
             adapter = adapterList
             isFocusable = false
             adapterList.onItemClickListener = {
-                //       startActivity(PokemonDetailsActivity.getStartIntent(context, it))
+                startActivity(it?.let { film -> FilmDetailsActivity.getStartIntent(context, film) })
             }
-
-
         }
+        if (films.isNotEmpty()) loader.visibility = GONE
     }
+
 }
